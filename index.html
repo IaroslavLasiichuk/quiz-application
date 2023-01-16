@@ -14,49 +14,26 @@
     <header class="header">
         <h1>View Highscores</h1>
         <p class="timer"></p>
+        <p class="score hide">Score: 0</p>
     </header>
     <main>
-        <section class="container">
-            <h2 class="primary-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum quaerat iusto
-                neque
-                sit harum accusantium.
-            </h2>
-            <article>
-                <ul>
-                    <li>
-                      <input type="radio" name="answer" id="a" class="answer">
-                      <label for="a" id="a_text">Answer</label>
-                    </li>
-                    <li>
-                      <input type="radio" name="answer" id="b" class="answer">
-                      <label for="b" id="b_text">Answer</label>
-                    </li>
-                    <li>
-                      <input type="radio" name="answer" id="c" class="answer">
-                      <label for="c" id="c_text">Answer</label>
-                    </li>
-                    <li>
-                      <input type="radio" name="answer" id="d" class="answer">
-                      <label for="d" id="d_text">Answer</label>
-                    </li>
-                  </ul>
-                <button  type="submit">Submit</button>
-            </article>
-            <article>
-                <h3>All done</h3>
-                <input type="text">
-                <button type="submit">Submit</button>
-            </article>
-            <article>
-                <button class="btn">Go back</button>
-                <button>Clear Highscore</button>
-            </article>
-            <article>
-                <button>Start Quiz</button>
-            </article>
-
-        </section>
+            <div class="question">
+            </div>
+            <button class="btn btn-start">Start Quiz</button>
         <div class="output"></div>
+        <section class="result-initial hide">
+            <h2>All done</h2>
+            <form action="">
+            <label for="text">Enter initials</label>
+            <input type="text">
+            <button type="submit">Submit</button>
+        </form>
+        </section>
+        <section class="result-hightscores hide">
+            <input type="text">
+            <button>Go back</button>
+            <button>Clear Highscores</button>
+        </section>
     </main>
     <script src="./Assets/js/app.js"></script>
 </body>
