@@ -17,23 +17,38 @@
         <p class="score hide">Score: 0</p>
     </header>
     <main>
-            <div class="question">
-            </div>
-            <button class="btn btn-start">Start Quiz</button>
-        <div class="output"></div>
+        <section class="primary-text hide">
+            <h2>Coding Quiz Challenge</h2>
+            <p>You will get 1 point for each correct answer. At the end of the Quiz, your total score will be displayed. Good luck!</p>
+        </section>
+        
+        <section class="question">
+            <!-- Shows all questions -->
+        </section>
+
+        <!-- Button to start quiz application -->
+        <button class="btn btn-start">Start Quiz</button>
+
+        <section class="output">
+            <!-- Output for Correct or Wrong -->
+        </section>
+        <!-- Input for user's initials -->
         <section class="result-initial hide">
             <h2>All done</h2>
             <form action="">
-            <label for="text">Enter initials</label>
-            <input type="text">
-            <button type="submit">Submit</button>
-        </form>
+                <label for="text">Enter initials</label>
+                <input id="test-result" type="text">
+                <button class="submit" type="submit">Submit</button>
+            </form>
         </section>
+
+        <!--Quiz Result and clear and go back buttoms-->
         <section class="result-hightscores hide">
-            <input type="text">
-            <button>Go back</button>
-            <button>Clear Highscores</button>
+            <input class="show-result" value="">
+            <button class="go-back">Go back</button>
+            <button class="clear">Clear Highscores</button>
         </section>
+
     </main>
     <script src="./Assets/js/app.js"></script>
 </body>
