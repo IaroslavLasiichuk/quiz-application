@@ -1,3 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+:root {
+    --primary-color: #1a46cb;
+
+}
+
+body {
+    background-color: #eff3ff;
+}
+
+header {
+    margin: 10px 30px;
+}
+
+h1 {
+    color: var(--primary-color);
+}
+
+h2 {
+    font-size: 35px;
+    margin: 20px;
+}
+
+p {
+    font-size: 18px;
+    margin-top: 15px;
+    font-style: italic;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.primary-text {
+    margin-top: 50px;
+}
+
+.text {
+    text-align: center;
+}
+
+.score {
+    text-align: end;
+    margin: 15px;
+}
+
+.btn {
+    background-color: var(--primary-color);
+    border: none;
+    color: aliceblue;
+    width: 110px;
+    height: 40px;
+}
+
+.btn-start {
+    margin-top: 30px;
+}
+
+ol {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    width: 700px;
+}
+
+.btn-answer {
+    background-color: var(--primary-color);
+    color: aliceblue;
+    border: none;
+    width: 400px;
+    height: 30px;
+    margin: 5px 0;
+
+}
+
+input {
+    width: 250px;
+    height: 30px;
+    margin: 0px 20px;
+    text-align: center;
+    font-size: 17 px;
+}
+
+label {
+    font-size: 20px;
+}
+
+.result-highscores {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.go-back {
+    margin: 20px;
+}
+
 .hide {
     display: none;
 }
