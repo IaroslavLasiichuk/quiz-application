@@ -7,46 +7,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Assets/css/reset.css">
     <link rel="stylesheet" href="./Assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,400&display=swap" rel="stylesheet">
     <title>Quiz Application</title>
 </head>
 
 <body>
-    <header class="header">
+    <header class="header flex hide">
         <h1>View Highscores</h1>
         <p class="timer"></p>
-        <p class="score hide">Score: 0</p>
     </header>
     <main>
-        <section class="primary-text hide">
+        <section class="primary-text flex">
             <h2>Coding Quiz Challenge</h2>
-            <p>You will get 1 point for each correct answer. At the end of the Quiz, your total score will be displayed. Good luck!</p>
+            <p>You will get 1 point for each correct answer. At the end of the Quiz, your total score will be displayed.
+                Good luck!</p>
         </section>
-        
-        <section class="question">
+   <p class="score hide">Score: 0</p>
+        <section class="question flex">
+         
             <!-- Shows all questions -->
         </section>
 
         <!-- Button to start quiz application -->
-        <button class="btn btn-start">Start Quiz</button>
+        <div class="start flex"> 
+            <button class="btn btn-start">Start Quiz</button>
+        </div>
+      
 
         <section class="output">
             <!-- Output for Correct or Wrong -->
         </section>
         <!-- Input for user's initials -->
-        <section class="result-initial hide">
+        <section class="result-initial flex hide">
             <h2>All done</h2>
             <form action="">
                 <label for="text">Enter initials</label>
-                <input id="test-result" type="text">
-                <button class="submit" type="submit">Submit</button>
+                <input id="test-result" type="text" placeholder="Enter your initial">
+                <button class="submit btn" type="submit">Submit</button>
             </form>
         </section>
 
         <!--Quiz Result and clear and go back buttoms-->
-        <section class="result-hightscores hide">
+        <section class="result-highscores flex   hide">
+            <h2>Highscores</h2>
             <input class="show-result" value="">
-            <button class="go-back">Go back</button>
-            <button class="clear">Clear Highscores</button>
+            <div class="btn-row" >
+                <button class="go-back btn">Go back</button>
+                <button class="clear btn">Clear Highscores</button>
+            </div>
+         
         </section>
 
     </main>

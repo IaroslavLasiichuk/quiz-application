@@ -6,14 +6,22 @@ let currentQuestion = 0;
 let score = 0;
 let timerCount = 101;
 let showText = document.createElement('p');
+showText.classList.add('text');
 document.querySelector('.output').appendChild(showText);
 
+// Initial state of page
 function initialPage() {
     document.querySelector('.primary-text').classList.remove('hide');
     document.querySelector('.result-hightscores').classList.add('hide');
     document.querySelector('.question').classList.add('hide');
     document.querySelector('.btn-start').classList.remove('hide');
 }
+// Reloading the page
+function reLoad() {
+    location.reload();
+}
+document.querySelector('.go-back').addEventListener('click', reLoad);
+
 // Start quiz
 function setTimer() {
     const timerInterval = setInterval(() => {
@@ -21,6 +29,8 @@ function setTimer() {
         showCount.textContent = timerCount;
         if (timerCount === 100) {
             startQuiz.classList.add('hide');
+            document.querySelector('.header').classList.remove('hide');
+            document.querySelector('.primary-text').classList.add('hide');
             document.querySelector('.score').classList.remove('hide');
             showQuestions();
         }
@@ -29,12 +39,12 @@ function setTimer() {
             showCount.textContent = '';
             endQuiz();
         }
-        else if 
-            (currentQuestion === questions.length){
+        else if
+            (currentQuestion === questions.length) {
             clearInterval(timerInterval);
-            }
+        }
     }, 1000);
-   
+
 }
 startQuiz.addEventListener('click', setTimer);
 
@@ -65,9 +75,7 @@ function showQuestions() {
         listAnswers.dataset.correct = element.isCorrect;
         if (listAnswers.dataset.correct) {
             listAnswers.dataset.correct = element.isCorrect;
-           
         }
-        
     });
     questionsContainer.addEventListener('click', selectAnswer);
 }
@@ -79,11 +87,11 @@ function selectAnswer(event) {
     console.log(correct);
     if (correct === 'true') {
         showScore.textContent = `Score: ${score + 1}`;
-        showText.textContent = 'Correct';
+        showText.innerHTML = 'Correct';
         score++;
         resetState();
     } else {
-        timerCount -= 25;
+        timerCount -= 15;
         showText.textContent = 'Wrong';
         resetState();
     }
@@ -91,36 +99,33 @@ function selectAnswer(event) {
     if (currentQuestion === questions.length) {
         document.querySelector('.result-initial').classList.remove('hide');
         document.querySelector('.question').classList.add('hide');
-        showText.textContent = '';
         endQuiz();
     } else {
         showQuestions(currentQuestion);
     }
 }
 
+function showResultHighscore(event) {
+    event.preventDefault();
+    showText.classList.add('hide');
+    document.querySelector('.result-initial').classList.add('hide');
+    document.querySelector('.timer').classList.add('hide');
+    document.querySelector('.result-highscores').classList.remove('hide');
+    let testResult = document.getElementById('test-result');
+    document.querySelector('.show-result').value = `${testResult.value} your score: ${score}`;
+    document.querySelector('.score').classList.add('hide');
+    document.querySelector('.header').classList.add('hide');
+}
+
+document.querySelector('.submit').addEventListener('click', showResultHighscore);
+document.querySelector('.clear').addEventListener('click', () => {
+    document.querySelector('.show-result').value = '';
+});
+
 function endQuiz() {
     document.querySelector('.result-initial').classList.remove('hide');
     document.querySelector('.question').classList.add('hide');
 }
-
-document.querySelector('.go-back').addEventListener('click', initialPage);
-
-function showResultHighscore(event) {
-    event.preventDefault();
-    document.querySelector('.result-initial').classList.add('hide');
-    document.querySelector('.timer').classList.add('hide');
-    document.querySelector('.result-hightscores').classList.remove('hide');
-    let testResult = document.getElementById('test-result');
-    document.querySelector('.show-result').value = `${testResult.value} your score: ${score}`;
-    document.querySelector('.score').classList.add('hide');
-}
-
-document.querySelector('.submit').addEventListener('click', showResultHighscore);
-
-document.querySelector('.clear').addEventListener('click', () => {
-    document.querySelector('.show-result').value = '';
-})
-
 
 // List of questins
 const questions = [
