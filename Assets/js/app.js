@@ -5,18 +5,8 @@ const questionElement = document.querySelector('.question');
 let currentQuestion = 0;
 let score = 0;
 let timerCount = 101;
-let showText = document.createElement('p');
-showText.classList.add('text');
-document.querySelector('.output').appendChild(showText);
+let showText = document.querySelector('.text');
 
-// Initial state of page
-function initialPage() {
-    document.querySelector('.primary-text').classList.remove('hide');
-    document.querySelector('.result-hightscores').classList.add('hide');
-    document.querySelector('.question').classList.add('hide');
-    document.querySelector('.btn-start').classList.remove('hide');
-}
-// Reloading the page
 function reLoad() {
     location.reload();
 }
@@ -36,7 +26,6 @@ function setTimer() {
         }
         if (timerCount === 0) {
             clearInterval(timerInterval);
-            showCount.textContent = '';
             endQuiz();
         }
         else if
@@ -47,7 +36,6 @@ function setTimer() {
 
 }
 startQuiz.addEventListener('click', setTimer);
-
 
 function resetState() {
     let hideQuestion = document.querySelectorAll('ol');
@@ -84,7 +72,6 @@ function selectAnswer(event) {
     const selectedButton = event.target;
     const correct = selectedButton.dataset.correct;
     let showScore = document.querySelector('.score');
-    console.log(correct);
     if (correct === 'true') {
         showScore.textContent = `Score: ${score + 1}`;
         showText.innerHTML = 'Correct';
@@ -99,6 +86,7 @@ function selectAnswer(event) {
     if (currentQuestion === questions.length) {
         document.querySelector('.result-initial').classList.remove('hide');
         document.querySelector('.question').classList.add('hide');
+        document.querySelector('.result-initial').appendChild(showText);
         endQuiz();
     } else {
         showQuestions(currentQuestion);
@@ -107,11 +95,15 @@ function selectAnswer(event) {
 
 function showResultHighscore(event) {
     event.preventDefault();
+    let testResult = document.getElementById('test-result');
+      if (testResult.value === '') {
+          testResult.style.border = "1px solid red";
+        return;
+    }
     showText.classList.add('hide');
     document.querySelector('.result-initial').classList.add('hide');
     document.querySelector('.timer').classList.add('hide');
     document.querySelector('.result-highscores').classList.remove('hide');
-    let testResult = document.getElementById('test-result');
     document.querySelector('.show-result').value = `${testResult.value} your score: ${score}`;
     document.querySelector('.score').classList.add('hide');
     document.querySelector('.header').classList.add('hide');

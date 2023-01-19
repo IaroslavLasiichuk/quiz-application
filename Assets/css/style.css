@@ -7,7 +7,6 @@
 
 :root {
     --primary-color: #1a46cb;
-
 }
 
 body {
@@ -87,7 +86,6 @@ ol {
     width: 400px;
     height: 30px;
     margin: 5px 0;
-
 }
 
 input {
@@ -121,4 +119,27 @@ label {
 
 .hide {
     display: none;
+}
+
+@media screen and (max-width: 992px) {
+    h2{
+        text-align: center;
+    }
+    p{
+        text-align: center;}
+    ol{
+        width: 300px;
+    }
+    .btn-answer{
+        width: 250px;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    input{
+        margin: 10px;
+    }
 }
