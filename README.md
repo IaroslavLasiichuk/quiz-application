@@ -15,12 +15,10 @@ After the game is over, the student can save their initials and score.
 The following animation demonstrates the application functionality:
 
 ![A user clicks through an interactive coding quiz, then enters initials to save the high score before resetting and starting over.](./Assets/img/04-web-apis-homework-demo.gif)
-## Usage
-Start the JavaScript Fundamentals Quiz by clicking the start button.
-The timer will start and you will be presented with a question.
-Answer each question correctly or incorrectly.
-If a question is answered incorrectly, time will be subtracted from the clock.
-Once all questions are answered or the timer reaches 0, the game is over.
-After the game is over, enter your initials and save your score.
+ ## Build with
+> - HTML
+> -  CSS
+> - JavaScript
+
 ## Testing
-You can also refer to source code to test it [Source code](https://github.com/IaroslavLasiichuk/quiz-application).
+You can also refer to source code to test it [Source code](https://iaroslavlasiichuk.github.io/quiz-application).
