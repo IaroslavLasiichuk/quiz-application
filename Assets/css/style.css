@@ -58,6 +58,9 @@ p {
     text-align: end;
     margin: 15px;
 }
+.timer{
+    text-align: center;
+}
 
 .btn {
     background-color: var(--primary-color);
